@@ -51,14 +51,14 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
             await update.message.reply_text("Идей пока нет")
 
-elif "Комплимент" in text:
+    elif "Комплимент" in text:
         if compliments:
             compliment = get_random_item(compliments, compliments_pool)
             await update.message.reply_text(f"✨ {compliment}")
         else:
             await update.message.reply_text("Комплиментов пока нет")
 
-   if "Написать" in text:
+    elif "Написать" in text:
         await update.message.reply_text("Напиши что угодно — я отвечу!")
 
     else:
