@@ -25,6 +25,7 @@ def get_random_item(main_list, pool):
 
 # Старт
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("🚨 ЭТО ТОЧНО НОВАЯ ВЕРСИЯ 🚨")
     keyboard = [
     ["📄 Помощь", "🔥 Идея"],
     ["💬 Написать", "✨ Комплимент дня"]
