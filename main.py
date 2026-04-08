@@ -41,24 +41,24 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text
 
-    if text == "📄 Помощь":
+    if "Помощь" in text:
         await update.message.reply_text("Я первый тестовый бот Юли, нажми на кнопки и увидишь что будет 😎")
 
-    elif text == "🔥 Идея":
+    elif "Идея" in text:
         if ideas:
             idea = get_random_item(ideas, ideas_pool)
             await update.message.reply_text(f"💡 {idea}")
         else:
             await update.message.reply_text("Идей пока нет")
 
-    elif text == "✨ Комплимент дня":
+elif "Комплимент" in text:
         if compliments:
             compliment = get_random_item(compliments, compliments_pool)
             await update.message.reply_text(f"✨ {compliment}")
         else:
             await update.message.reply_text("Комплиментов пока нет")
 
-    elif text == "💬 Написать":
+   if "Написать" in text:
         await update.message.reply_text("Напиши что угодно — я отвечу!")
 
     else:
